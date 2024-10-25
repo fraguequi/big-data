@@ -1,4 +1,5 @@
 #!/usr/bin/python2.7
+# -*- coding: utf-8 -*-
 import sys
 
 # Diccionario para almacenar la suma de potencias por CUPS

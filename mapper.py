@@ -1,4 +1,5 @@
 #!/usr/bin/python2.7
+# -*- coding: utf-8 -*-
 import sys
 
 # Bandera para saltar el encabezado (si es necesario)
@@ -28,3 +29,4 @@ for line in sys.stdin:
         except ValueError:
             # En caso de error de conversión de potencia, saltar la línea
             continue
+
