@@ -1,4 +1,4 @@
-#!/usr/bin/python2.6
+#!/usr/bin/python2.7
 import sys
 
 # Bandera para saltar el encabezado (si es necesario)
