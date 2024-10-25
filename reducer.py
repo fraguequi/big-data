@@ -1,38 +1,26 @@
 import sys
 
-current_cups = None
-current_sum = 0.0
+# Diccionario para almacenar la suma de potencias por CUPS
+sums = {}
 
-# Reducer para sumar potencias por CUPS
+# Leer las líneas de entrada
 for line in sys.stdin:
-    # Eliminar espacios en blanco
     line = line.strip()
+    cups, potencia = line.split("\t")  # Separar clave y valor
 
-    # Separar el CUPS y la potencia
-    fields = line.split("\t")
-    if len(fields) != 2:
-        continue
-
-    cups = fields[0]
+    # Convertir la potencia a float
     try:
-        potencia = float(fields[1])
+        potencia = float(potencia)
     except ValueError:
-        # Ignorar si la potencia no es un número
-        continue
+        continue  # Si hay un error, saltar la línea
 
-    # Si cambiamos de CUPS, imprimimos el CUPS anterior y su suma
-    if current_cups == cups:
-        current_sum += potencia
+    # Sumar potencias por cada CUPS
+    if cups in sums:
+        sums[cups] += potencia
     else:
-        if current_cups:
-            # Imprimir el resultado para el CUPS anterior
-            print(current_cups + "\t" + str(current_sum))
+        sums[cups] = potencia
 
-        # Actualizar para el nuevo CUPS
-        current_cups = cups
-        current_sum = potencia
-
-# Imprimir la última entrada
-if current_cups:
-    print(current_cups + "\t" + str(current_sum))
+# Imprimir los resultados
+for cups, total_potencia in sums.items():
+    print cups + "\t" + str(total_potencia)
 

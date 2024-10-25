@@ -13,8 +13,8 @@ for line in sys.stdin:
         header = False
         continue
 
-    # Dividir la línea por tabulador o coma
-    fields = line.split(",")
+    # Dividir la línea por punto y coma
+    fields = line.split(";")
 
     # Verificar que la línea tenga 3 campos (CUPS, PERIODO, POTENCIA)
     if len(fields) == 3:
@@ -23,7 +23,7 @@ for line in sys.stdin:
 
         try:
             # Emitir la clave (CUPS) y el valor (potencia contratada)
-            print(cups + "\t" + str(float(potencia)))
+            print cups + "\t" + str(float(potencia))
         except ValueError:
             # En caso de error de conversión de potencia, saltar la línea
             continue
