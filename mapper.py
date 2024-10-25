@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 
 # Bandera para saltar el encabezado (si es necesario)
