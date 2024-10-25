@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import sys
 
 current_cups = None
