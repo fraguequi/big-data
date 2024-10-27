@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 
-# Bandera para saltar el encabezado (si es necesario)
+# Bandera para saltar el encabezado (Primera Línea)
 header = True
 
 # Función mapper para emitir CUPS y la potencia contratada
